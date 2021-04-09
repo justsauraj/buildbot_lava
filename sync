@@ -17,18 +17,3 @@ ls
 #syncing repo
 repo init -u git://github.com/SHRP/platform_manifest_twrp_omni.git -b v3_9.0
 repo sync -j16
-
-#cloning dt
-git clone https://github.com/noobyysauraj/ofox_realme_RMX2151 device/realme/RMX2151
-
-pwd
-ls
-
-export ALLOW_MISSING_DEPENDENCIES=true
-. build/envsetup.sh
-lunch omni_RMX2151-eng
-mka recoveryimage
-
-curl https://bashupload.com/ -T out/target/product/RMX2151/*zip
-curl https://bashupload.com/ -T out/target/product/RMX2151/*zip
-
