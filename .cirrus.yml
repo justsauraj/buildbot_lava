@@ -9,14 +9,14 @@ task:
     timeout_in: 122m
     container:
       image: mrkhan007/aosp:latest
-      cpu: 16
-      memory: 30G
-    download_ccache_script:
-      - bash download_ccache
+      cpu: 8
+      memory: 19G
+    #download_ccache_script:
+      #- bash download_ccache
     sync_script:
       - bash sync
-    build_script:
-      - bash build
-    upload_ccache_script:
-      - bash upload_ccache
+    #build_script:
+      #- bash build
+    #upload_ccache_script:
+      #- bash upload_ccache
 #damm
