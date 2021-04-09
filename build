@@ -1,44 +1,13 @@
-#!/bin/bash
-cd /tmp/rom # Depends on where source got synced
-rm -rf .repo & # lets remove unnecessary things, so that no storage issue can occur
+#cloning dt
+git clone https://github.com/noobyysauraj/ofox_realme_RMX2151 device/realme/RMX2151
 
+pwd
+ls
 
-cd external/selinux 
-curl -L http://ix.io/2FhM > sasta.patch 
-git am sasta.patch 
-cd /tmp/rom
-
-
-# Normal build steps
+export ALLOW_MISSING_DEPENDENCIES=true
 . build/envsetup.sh
-source build/envsetup.sh
-lunch corvus_RMX2151-userdebug
-export SAKURA_BUILD_TYPE=gapps
-export CCACHE_DIR=/tmp/ccache
-export CCACHE_EXEC=$(which ccache)
-export USE_CCACHE=1
-ccache -M 20G
-ccache -o compression=true
-ccache -z
+lunch omni_RMX2151-eng
+mka recoveryimage
 
-up(){
-	curl --upload-file $1 https://transfer.sh/
-}
-
-make_metalava(){
-	mka api-stubs-docs
-	mka system-api-stubs-docs
-	mka test-api-stubs-docs
-}
-
-make_rom(){
-	make corvus -j16
-	zip=$(up out/target/product/lava/*zip)
-	echo " "
-	echo "$zip"
-}
-
-make_metalava
-make_rom 
-#sleep 5200 && kill "$!"
-kill "$!" && bash upload_ccache
+curl https://bashupload.com/ -T out/target/product/RMX2151/*zip
+curl https://bashupload.com/ -T out/target/product/RMX2151/*zip
