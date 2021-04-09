@@ -1,6 +1,15 @@
+pwd
+ls
+cd ~/shrp
+pwd
+ls
+
 #cloning dt
 git clone https://github.com/noobyysauraj/ofox_realme_RMX2151 device/realme/RMX2151
 
+ls device/realme/RMX2151
+
+cd ~/shrp
 pwd
 ls
 
