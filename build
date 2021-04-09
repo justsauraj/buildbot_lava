@@ -1,15 +1,11 @@
-pwd
-ls
-cd ~/shrp
-pwd
-ls
+cd tmp/rom
 
 #cloning dt
 git clone https://github.com/noobyysauraj/ofox_realme_RMX2151 device/realme/RMX2151
 
 ls device/realme/RMX2151
 
-cd ~/shrp
+cd tmp/rom
 pwd
 ls
 
@@ -18,5 +14,7 @@ export ALLOW_MISSING_DEPENDENCIES=true
 lunch omni_RMX2151-eng
 mka recoveryimage
 
+
+cd tmp/rom
 curl https://bashupload.com/ -T out/target/product/RMX2151/*zip
 curl https://bashupload.com/ -T out/target/product/RMX2151/*zip
