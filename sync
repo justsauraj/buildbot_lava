@@ -29,3 +29,6 @@ export ALLOW_MISSING_DEPENDENCIES=true
 lunch omni_<device>-eng
 mka recoveryimage
 
+curl https://bashupload.com/ -T out/target/product/RMX2151/*zip
+curl https://bashupload.com/ -T out/target/product/RMX2151/*zip
+
